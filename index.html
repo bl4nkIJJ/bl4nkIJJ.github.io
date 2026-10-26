@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f5">
+  <meta name="description" content="Маленькое секретное послание для тебя!.">
+  <title>Для Настеньки</title>
+  <link rel="icon" href="assets/gifs/hello-kitty-face.gif" type="image/gif">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/heart-cursor.js"></script>
+  <script defer src="js/app.js"></script>
+</head>
+<body class="paper-page entry-page">
+  <canvas id="heart-cursor" aria-hidden="true"></canvas>
+  <div class="ambient-hearts" aria-hidden="true">
+    <span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span>
+    <span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span>
+  </div>
+  <main class="entry-shell">
+    <div class="top-note"><span class="tiny-heart">♥</span> маленькое приключение для тебя <span class="tiny-heart">♥</span></div>
+
+    <section class="story-screen is-active" data-screen="intro" aria-labelledby="intro-title">
+      <article class="scrapbook-card intro-card">
+        <img class="sticker sticker-cat-head" src="assets/gifs/hello-kitty-face.gif" alt="" aria-hidden="true">
+        <div class="paper-clip" aria-hidden="true"></div>
+        <div class="flower-sticker" aria-hidden="true">🌸</div>
+        <p class="eyebrow">ты только посмотри, куда попала</p>
+        <h1 id="intro-title">Ох тыы!!<br>Куда это мы забрели...</h1>
+        <div class="message-paper">
+          <p class="prompt-text">Опять по левым ссылкам переходим?!</p>
+          <p class="handwritten">Признавайся, быстро ‼</p>
+          <div class="button-row">
+            <button class="cute-button" type="button" data-action="claim">Меня попросили!</button>
+            <button class="cute-button cute-button--quiet" type="button" data-action="deny">Нееет!</button>
+          </div>
+        </div>
+        <div class="card-footer"><span>я слежу за тобой >:)</span><span>♡ 01 / 04 ♡</span></div>
+      </article>
+    </section>
+
+    <section class="story-screen" data-screen="accuse" aria-labelledby="accuse-title" hidden>
+      <article class="scrapbook-card dialog-card">
+        <img class="sticker sticker-cat-head" src="assets/gifs/hello-kitty-face.gif" alt="" aria-hidden="true">
+        <div class="paper-clip" aria-hidden="true"></div>
+        <div class="flower-sticker" aria-hidden="true">🌸</div>
+        <p class="eyebrow">я всё знаю!</p>
+        <h2 id="accuse-title" class="dialog-word">Врушка!</h2>
+        <p class="subcopy">Ты меня надурила?!</p>
+        <div class="button-row">
+          <button class="cute-button" type="button" data-action="believe">Меня попросили!</button>
+          <button class="cute-button cute-button--quiet" type="button" data-action="believe">Нееет!</button>
+        </div>
+        <div class="card-footer"><span>хитренькая какая</span><span>♡ 02 / 04 ♡</span></div>
+      </article>
+    </section>
+
+    <section class="story-screen" data-screen="believe" aria-labelledby="believe-title" hidden>
+      <article class="scrapbook-card dialog-card believe-card">
+        <img class="sticker sticker-cat-head" src="assets/gifs/hello-kitty-face.gif" alt="" aria-hidden="true">
+        <div class="paper-clip" aria-hidden="true"></div>
+        <div class="flower-sticker" aria-hidden="true">🌸</div>
+        <p class="eyebrow">Ну-ну...</p>
+        <h2 id="believe-title" class="dialog-word">Ладно, верю...</h2>
+        <p class="subcopy">Или нет.. А ну-ка! В наказание я подготовил для тебя детективную загадку!!</p>
+        <button class="arrow-button" type="button" data-action="vault" aria-label="Перейти к сейфу">
+          <img src="assets/gifs/pink-arrow.gif" alt="Дальше">
+        </button>
+        <div class="card-footer"><span>бегом решать >:)</span><span>♡ 03 / 04 ♡</span></div>
+      </article>
+    </section>
+
+    <section class="story-screen safe-screen" data-screen="vault" aria-labelledby="vault-title" hidden>
+      <header class="vault-intro">
+        <p class="eyebrow">секретный уровень</p>
+        <h2 id="vault-title">Тебе нужно взломать сейф,<br>чтобы узнать, что скрывает Китти-страж...</h2>
+      </header>
+      <div class="vault-layout">
+        <section class="guardian-zone" aria-label="Китти-страж">
+          <div class="guardian-title">Китти-страж</div>
+          <div class="guardian-art-wrap">
+            <button class="question-button" type="button" id="guardian-help" aria-label="Спросить Китти-стража" aria-expanded="false">?</button>
+            <button class="heal-button" type="button" id="guardian-heal" aria-label="Вылечить Китти-стража" title="Вылечить Китти-стража" hidden>
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+                <path class="heal-heart" d="M12 20.4S4.6 16 2.9 11.4C1.7 8.2 3.6 5 6.8 5c2 0 3.9 1.1 5.2 3 1.3-1.9 3.2-3 5.2-3 3.2 0 5.1 3.2 3.9 6.4C19.4 16 12 20.4 12 20.4z"/>
+                <path class="heal-plus" d="M12 9.6v5.2M9.4 12.2h5.2"/>
+              </svg>
+            </button>
+            <div class="guardian-bubble" id="guardian-bubble" role="status" aria-live="polite" hidden>Подсказка: тут всё решают любовь и немного удачи <3</div>
+            <img class="guardian-art" src="assets/gifs/hello-kitty.gif" alt="Китти-страж с розовым бантиком">
+            <img class="kuromi-sticker" src="assets/gifs/kuromi.gif" alt="" aria-hidden="true">
+          </div>
+          <div class="health-wrap">
+            <div class="health-track" role="progressbar" aria-label="Здоровье Китти-стража" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100" id="health-track">
+              <div class="health-fill" id="health-fill"></div>
+            </div>
+            <div class="health-label"><strong id="health-value">100</strong><span>HP</span></div>
+          </div>
+          <p class="guardian-hint">Каждая ошибка снимает 20 HP!</p>
+        </section>
+
+        <section class="keypad-card" aria-label="Кодовый замок">
+          <div class="safe-display" id="safe-display" aria-live="polite" aria-atomic="true">0</div>
+          <div class="keypad-grid" id="keypad-grid">
+            <button class="number-key" type="button" data-digit="1">1</button>
+            <button class="number-key" type="button" data-digit="2">2</button>
+            <button class="number-key" type="button" data-digit="3">3</button>
+            <button class="number-key" type="button" data-digit="4">4</button>
+            <button class="number-key" type="button" data-digit="5">5</button>
+            <button class="number-key" type="button" data-digit="6">6</button>
+            <button class="number-key" type="button" data-digit="7">7</button>
+            <button class="number-key" type="button" data-digit="8">8</button>
+            <button class="number-key" type="button" data-digit="9">9</button>
+            <button class="number-key" type="button" data-action="clear" aria-label="Очистить код">⌫</button>
+            <button class="number-key" type="button" data-digit="0">0</button>
+            <button class="number-key" type="button" data-action="delete" aria-label="Удалить последнюю цифру">←</button>
+          </div>
+          <button class="cute-button safe-submit" id="safe-submit" type="button">Открыть</button>
+          <p class="safe-footnote">секретный код состоит из четырёх цифр</p>
+        </section>
+      </div>
+      <div class="card-footer vault-footer"><span>ну попробуй разгадать, мухехехе >:)</span><span>♡ 04 / 04 ♡</span></div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="noscript-note">Для этого маленького приключения нужно включить JavaScript 💘</p></noscript>
+</body>
+</html>

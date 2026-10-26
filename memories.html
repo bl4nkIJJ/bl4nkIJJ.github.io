@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f5">
+  <meta name="description" content="Наши маленькие воспоминания, собранные по датам.">
+  <title>Наш маленький фотоархив 💘</title>
+  <link rel="icon" href="assets/gifs/hello-kitty-face.gif" type="image/gif">
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/heart-cursor.js"></script>
+  <script defer src="js/photos-data.js"></script>
+  <script defer src="js/memories.js"></script>
+</head>
+<body class="paper-page memories-page">
+  <canvas id="heart-cursor" aria-hidden="true"></canvas>
+  <div class="ambient-hearts" aria-hidden="true"><span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span></div>
+  <main class="memory-shell">
+    <header class="page-heading scrapbook-heading">
+      <a class="back-link" href="index.html" aria-label="Назад к началу">← к началу</a>
+      <img src="assets/gifs/hello-kitty.gif" class="heading-sticker" alt="Hello Kitty">
+      <h1>Наши воспоминания <span>♡</span></h1>
+      <p class="heading-copy">Маленький альбом больших чувств. Листай потихонечку и улыбайся ;)</p>
+    </header>
+    <div class="memory-counter" id="memory-counter">наши моменты · 22 фото</div>
+    <section class="memory-timeline" id="memory-timeline" aria-label="Фотографии в хронологическом порядке">
+      <div class="loading-note">Собираю наши моменты... 💌</div>
+    </section>
+    <footer class="memory-end scrapbook-card">
+      <img src="assets/gifs/cat-heart.gif" alt="Котик с сердечком" class="end-sticker">
+      <p class="eyebrow">а дальше – самое важное</p>
+      <h2>Есть кое-что, что я очень хочу тебе сказать...</h2>
+      <p>Нажимай! Это для тебя.</p>
+      <a class="cute-button link-button" href="letter.html">Открыть письмо <span>♡</span></a>
+    </footer>
+  </main>
+  <script>
+    // Контент уже локальный, поэтому страница работает без сервера и сети.
+  </script>
+</body>
+</html>
